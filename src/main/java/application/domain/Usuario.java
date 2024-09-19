@@ -19,6 +19,7 @@ public class Usuario extends Cliente {
         this.premium = premium;
     }
 
+
     @Override
     public String toString() {
         return "Usuario{" +
@@ -28,4 +29,14 @@ public class Usuario extends Cliente {
                 ", premium = " + premium +
                 '}';
     }
+
+    @Override
+    public int compareTo(Cliente c) {
+        if (this.getIdentificador().equalsIgnoreCase(c.getIdentificador())) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
 }

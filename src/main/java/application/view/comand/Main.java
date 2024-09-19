@@ -1,7 +1,6 @@
 package application.view.comand;
 
 import application.CRUD.Clientes;
-import application.domain.Cliente;
 import application.domain.Usuario;
 
 import java.util.ArrayList;
@@ -12,7 +11,7 @@ public class Main {
     static Clientes clientes = new Clientes();
 
     public static void main(String[] args) {
-        ArrayList<Cliente> usuarios = new ArrayList<Cliente>();
+        ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
         int selectedOption = -1;
         do {
             try {
@@ -21,13 +20,12 @@ public class Main {
                 System.out.println("2. - Buscar Usuario");
                 System.out.println("3. - Total Ingresos");
                 System.out.println("0. - Salir");
-
                 selectedOption = scanner.nextInt();
-                System.out.println(selectedOption);
 
                 switch (selectedOption) {
 
                     case 1: //crear usuario
+
                         String identificador, contrasenna;
                         int numpremium;
                         double descuento;
@@ -43,7 +41,7 @@ public class Main {
                         do {
                             if (numpremium == 1) {
                                 premium = true;
-                            } else {
+                            } else if (numpremium != 0) {
                                 System.out.println("no es ni 1 ni 0");
                                 System.out.println("¿Eres premium? 1/0");
                                 numpremium = scanner.nextInt();
@@ -57,6 +55,7 @@ public class Main {
                         } else {
                             System.out.println("Usuario creado correctamente");
                         }
+                        System.out.println();
                         break;
 
                     case 2: //buscar usuario
@@ -70,10 +69,14 @@ public class Main {
                         } else {
                             System.out.println(usuarioBuscado);
                         }
+                        System.out.println();
                         break;
 
                     case 3: //total ingreso
 
+                        double totalIngresos = clientes.totalIngreso(usuarios);
+                        System.out.println("El total de ingresos es:" + totalIngresos);
+                        System.out.println();
                         break;
 
                     default:
@@ -84,7 +87,5 @@ public class Main {
                 System.out.println("Error");
             }
         } while (selectedOption != 0);
-
-
     }
 }

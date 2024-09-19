@@ -38,12 +38,5 @@ public abstract class Cliente {
         this.descuento = descuento;
     }
 
-    @Override
-    public String toString() {
-        return "Cliente{" +
-                "identificador='" + identificador + '\'' +
-                ", contrasenna='" + contrasenna + '\'' +
-                ", descuento=" + descuento +
-                '}';
-    }
+    public abstract int compareTo(Cliente c);
 }
