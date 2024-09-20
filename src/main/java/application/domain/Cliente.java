@@ -37,6 +37,4 @@ public abstract class Cliente {
     public void setDescuento(Double descuento) {
         this.descuento = descuento;
     }
-
-    public abstract int compareTo(Cliente c);
 }

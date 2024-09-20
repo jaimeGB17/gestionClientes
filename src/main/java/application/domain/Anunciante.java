@@ -1,6 +1,6 @@
 package application.domain;
 
-public class Anunciante extends Cliente{
+public class Anunciante extends Cliente {
     private int nAnuncios;
 
     public Anunciante() {
@@ -18,11 +18,4 @@ public class Anunciante extends Cliente{
     public void setnAnuncios(int nAnuncios) {
         this.nAnuncios = nAnuncios;
     }
-
-    @Override
-    public int compareTo(Cliente c) {
-        return 0;
-    }
-
-
 }

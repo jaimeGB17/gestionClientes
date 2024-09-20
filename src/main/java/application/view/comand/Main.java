@@ -87,5 +87,7 @@ public class Main {
                 System.out.println("Error");
             }
         } while (selectedOption != 0);
+
+        System.out.println("Adios");
     }
 }
